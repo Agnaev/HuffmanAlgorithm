@@ -14,8 +14,9 @@ namespace laba2 {
 
     SortedDictionary<char, int> statistic = new SortedDictionary<char, int>();
     HuffmanTree huffmanTree               = new HuffmanTree();
-    
-    
+    BitArray enc;
+
+
     public Form1() {
       InitializeComponent();
     }
@@ -23,7 +24,7 @@ namespace laba2 {
     private void openFile_Click(object sender, System.EventArgs e) {
       if (openFileDialog1.ShowDialog() == DialogResult.OK) {
         numberOfAction++;
-        infoBox.Text += "["+ numberOfAction +"] " +openFileDialog1.FileName + " ";
+        infoBox.Text += "["+ numberOfAction +"] " +openFileDialog1.FileName + "    ";
       }
     }
 
@@ -32,7 +33,7 @@ namespace laba2 {
         byteArray = new byte[fstream.Length];
         fstream.Read(byteArray, 0, byteArray.Length);
         numberOfAction++;
-        infoBox.Text += "\n [" + numberOfAction + "] " + "Файл прочитан. ";
+        infoBox.Text += "\n [" + numberOfAction + "] " + "Файл прочитан.    ";
         readFileInMyEncoding(byteArray);
       }
     }
@@ -60,6 +61,8 @@ namespace laba2 {
           statistic.Add(el, 1);
         }
       }
+      numberOfAction++;
+      infoBox.Text += "[" + numberOfAction + "] " + " Text was analized.    ";
     }
 
     private void analiz_Click(object sender, System.EventArgs e) {
@@ -68,16 +71,26 @@ namespace laba2 {
 
     private void encode_Click(object sender, System.EventArgs e) {
       decode.Enabled = true;
-      BitArray enc = huffmanTree.Encode(encodedText);
+      enc = huffmanTree.Encode(encodedText);
+      foreach (bool bit in enc) {
+        encodeTextBox.Text += (bit ? 1 : 0) + " ";
+      }
+
+      numberOfAction++;
+      infoBox.Text += "[" + numberOfAction + "] " + "Text was encoded via Huffman algorithm.    ";
     }
 
     private void decode_Click(object sender, System.EventArgs e) {
-
+      decodeTextBox.Text = huffmanTree.Decode(enc);
+      numberOfAction++;
+      infoBox.Text += "[" + numberOfAction + "] " + "Text was decoded via Huffman algorithm.    ";
     }
 
     private void buldTree_Click(object sender, System.EventArgs e) {
       encode.Enabled = true;
       huffmanTree.Build(encodedText);
+      numberOfAction++;
+      infoBox.Text += "[" + numberOfAction + "] " + "Huffman tree was builded. ";
     }
   }
 }
