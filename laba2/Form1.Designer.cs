@@ -25,6 +25,7 @@
     private void InitializeComponent() {
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
+      this.analiz = new System.Windows.Forms.Button();
       this.readFile = new System.Windows.Forms.Button();
       this.openFile = new System.Windows.Forms.Button();
       this.beginText = new System.Windows.Forms.TextBox();
@@ -32,13 +33,21 @@
       this.infoBox = new System.Windows.Forms.TextBox();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+      this.groupBox4 = new System.Windows.Forms.GroupBox();
+      this.decodeTextBox = new System.Windows.Forms.TextBox();
+      this.encodeTextBox = new System.Windows.Forms.TextBox();
+      this.encode = new System.Windows.Forms.Button();
+      this.decode = new System.Windows.Forms.Button();
+      this.buldTree = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox3.SuspendLayout();
       this.groupBox2.SuspendLayout();
+      this.groupBox4.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.groupBox4);
       this.groupBox1.Controls.Add(this.groupBox3);
       this.groupBox1.Controls.Add(this.groupBox2);
       this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -50,6 +59,7 @@
       // 
       // groupBox3
       // 
+      this.groupBox3.Controls.Add(this.analiz);
       this.groupBox3.Controls.Add(this.readFile);
       this.groupBox3.Controls.Add(this.openFile);
       this.groupBox3.Controls.Add(this.beginText);
@@ -60,9 +70,19 @@
       this.groupBox3.TabStop = false;
       this.groupBox3.Text = "Входные данные";
       // 
+      // analiz
+      // 
+      this.analiz.Location = new System.Drawing.Point(251, 19);
+      this.analiz.Name = "analiz";
+      this.analiz.Size = new System.Drawing.Size(103, 23);
+      this.analiz.TabIndex = 5;
+      this.analiz.Text = "Анализ";
+      this.analiz.UseVisualStyleBackColor = true;
+      this.analiz.Click += new System.EventHandler(this.analiz_Click);
+      // 
       // readFile
       // 
-      this.readFile.Location = new System.Drawing.Point(163, 19);
+      this.readFile.Location = new System.Drawing.Point(112, 19);
       this.readFile.Name = "readFile";
       this.readFile.Size = new System.Drawing.Size(133, 23);
       this.readFile.TabIndex = 4;
@@ -72,7 +92,7 @@
       // 
       // openFile
       // 
-      this.openFile.Location = new System.Drawing.Point(57, 19);
+      this.openFile.Location = new System.Drawing.Point(6, 19);
       this.openFile.Name = "openFile";
       this.openFile.Size = new System.Drawing.Size(100, 23);
       this.openFile.TabIndex = 3;
@@ -113,6 +133,72 @@
       // 
       this.openFileDialog1.FileName = "openFileDialog1";
       // 
+      // groupBox4
+      // 
+      this.groupBox4.Controls.Add(this.buldTree);
+      this.groupBox4.Controls.Add(this.decode);
+      this.groupBox4.Controls.Add(this.encode);
+      this.groupBox4.Controls.Add(this.encodeTextBox);
+      this.groupBox4.Controls.Add(this.decodeTextBox);
+      this.groupBox4.Location = new System.Drawing.Point(527, 19);
+      this.groupBox4.Name = "groupBox4";
+      this.groupBox4.Size = new System.Drawing.Size(451, 585);
+      this.groupBox4.TabIndex = 3;
+      this.groupBox4.TabStop = false;
+      this.groupBox4.Text = "Выходные данные";
+      // 
+      // decodeTextBox
+      // 
+      this.decodeTextBox.Enabled = false;
+      this.decodeTextBox.Location = new System.Drawing.Point(6, 311);
+      this.decodeTextBox.Multiline = true;
+      this.decodeTextBox.Name = "decodeTextBox";
+      this.decodeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+      this.decodeTextBox.Size = new System.Drawing.Size(439, 268);
+      this.decodeTextBox.TabIndex = 0;
+      // 
+      // encodeTextBox
+      // 
+      this.encodeTextBox.Enabled = false;
+      this.encodeTextBox.Location = new System.Drawing.Point(6, 48);
+      this.encodeTextBox.Multiline = true;
+      this.encodeTextBox.Name = "encodeTextBox";
+      this.encodeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+      this.encodeTextBox.Size = new System.Drawing.Size(439, 218);
+      this.encodeTextBox.TabIndex = 1;
+      // 
+      // encode
+      // 
+      this.encode.Enabled = false;
+      this.encode.Location = new System.Drawing.Point(111, 19);
+      this.encode.Name = "encode";
+      this.encode.Size = new System.Drawing.Size(88, 23);
+      this.encode.TabIndex = 2;
+      this.encode.Text = "Закодировать";
+      this.encode.UseVisualStyleBackColor = true;
+      this.encode.Click += new System.EventHandler(this.encode_Click);
+      // 
+      // decode
+      // 
+      this.decode.Enabled = false;
+      this.decode.Location = new System.Drawing.Point(6, 282);
+      this.decode.Name = "decode";
+      this.decode.Size = new System.Drawing.Size(88, 23);
+      this.decode.TabIndex = 3;
+      this.decode.Text = "Декодировать";
+      this.decode.UseVisualStyleBackColor = true;
+      this.decode.Click += new System.EventHandler(this.decode_Click);
+      // 
+      // buldTree
+      // 
+      this.buldTree.Location = new System.Drawing.Point(6, 19);
+      this.buldTree.Name = "buldTree";
+      this.buldTree.Size = new System.Drawing.Size(99, 23);
+      this.buldTree.TabIndex = 4;
+      this.buldTree.Text = "Строить дерево";
+      this.buldTree.UseVisualStyleBackColor = true;
+      this.buldTree.Click += new System.EventHandler(this.buldTree_Click);
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +214,8 @@
       this.groupBox3.PerformLayout();
       this.groupBox2.ResumeLayout(false);
       this.groupBox2.PerformLayout();
+      this.groupBox4.ResumeLayout(false);
+      this.groupBox4.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -143,6 +231,13 @@
     private System.Windows.Forms.OpenFileDialog openFileDialog1;
     private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     private System.Windows.Forms.Button readFile;
+    private System.Windows.Forms.Button analiz;
+    private System.Windows.Forms.GroupBox groupBox4;
+    private System.Windows.Forms.Button decode;
+    private System.Windows.Forms.Button encode;
+    private System.Windows.Forms.TextBox encodeTextBox;
+    private System.Windows.Forms.TextBox decodeTextBox;
+    private System.Windows.Forms.Button buldTree;
   }
 }
 
