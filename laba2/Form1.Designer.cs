@@ -24,8 +24,15 @@
     /// </summary>
     private void InitializeComponent() {
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.groupBox5 = new System.Windows.Forms.GroupBox();
+      this.label5 = new System.Windows.Forms.Label();
+      this.groupBox4 = new System.Windows.Forms.GroupBox();
+      this.buldTree = new System.Windows.Forms.Button();
+      this.decode = new System.Windows.Forms.Button();
+      this.encode = new System.Windows.Forms.Button();
+      this.encodeTextBox = new System.Windows.Forms.TextBox();
+      this.decodeTextBox = new System.Windows.Forms.TextBox();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
-      this.analiz = new System.Windows.Forms.Button();
       this.readFile = new System.Windows.Forms.Button();
       this.openFile = new System.Windows.Forms.Button();
       this.beginText = new System.Windows.Forms.TextBox();
@@ -33,20 +40,19 @@
       this.infoBox = new System.Windows.Forms.TextBox();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-      this.groupBox4 = new System.Windows.Forms.GroupBox();
-      this.decodeTextBox = new System.Windows.Forms.TextBox();
-      this.encodeTextBox = new System.Windows.Forms.TextBox();
-      this.encode = new System.Windows.Forms.Button();
-      this.decode = new System.Windows.Forms.Button();
-      this.buldTree = new System.Windows.Forms.Button();
+      this.aboutEncoding = new System.Windows.Forms.RichTextBox();
+      this.label6 = new System.Windows.Forms.Label();
+      this.label7 = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
+      this.groupBox5.SuspendLayout();
+      this.groupBox4.SuspendLayout();
       this.groupBox3.SuspendLayout();
       this.groupBox2.SuspendLayout();
-      this.groupBox4.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.groupBox5);
       this.groupBox1.Controls.Add(this.groupBox4);
       this.groupBox1.Controls.Add(this.groupBox3);
       this.groupBox1.Controls.Add(this.groupBox2);
@@ -57,28 +63,105 @@
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Дерево Хафмана";
       // 
+      // groupBox5
+      // 
+      this.groupBox5.Controls.Add(this.label7);
+      this.groupBox5.Controls.Add(this.label6);
+      this.groupBox5.Controls.Add(this.aboutEncoding);
+      this.groupBox5.Controls.Add(this.label5);
+      this.groupBox5.Location = new System.Drawing.Point(276, 19);
+      this.groupBox5.Name = "groupBox5";
+      this.groupBox5.Size = new System.Drawing.Size(278, 585);
+      this.groupBox5.TabIndex = 4;
+      this.groupBox5.TabStop = false;
+      this.groupBox5.Text = "Информация";
+      // 
+      // label5
+      // 
+      this.label5.AutoSize = true;
+      this.label5.Location = new System.Drawing.Point(6, 26);
+      this.label5.Name = "label5";
+      this.label5.Size = new System.Drawing.Size(122, 13);
+      this.label5.TabIndex = 0;
+      this.label5.Text = "Размер изначального:";
+      // 
+      // groupBox4
+      // 
+      this.groupBox4.Controls.Add(this.buldTree);
+      this.groupBox4.Controls.Add(this.decode);
+      this.groupBox4.Controls.Add(this.encode);
+      this.groupBox4.Controls.Add(this.encodeTextBox);
+      this.groupBox4.Controls.Add(this.decodeTextBox);
+      this.groupBox4.Location = new System.Drawing.Point(560, 19);
+      this.groupBox4.Name = "groupBox4";
+      this.groupBox4.Size = new System.Drawing.Size(418, 585);
+      this.groupBox4.TabIndex = 3;
+      this.groupBox4.TabStop = false;
+      this.groupBox4.Text = "Выходные данные";
+      // 
+      // buldTree
+      // 
+      this.buldTree.Location = new System.Drawing.Point(6, 19);
+      this.buldTree.Name = "buldTree";
+      this.buldTree.Size = new System.Drawing.Size(99, 23);
+      this.buldTree.TabIndex = 4;
+      this.buldTree.Text = "Строить дерево";
+      this.buldTree.UseVisualStyleBackColor = true;
+      this.buldTree.Click += new System.EventHandler(this.buldTree_Click);
+      // 
+      // decode
+      // 
+      this.decode.Enabled = false;
+      this.decode.Location = new System.Drawing.Point(6, 282);
+      this.decode.Name = "decode";
+      this.decode.Size = new System.Drawing.Size(88, 23);
+      this.decode.TabIndex = 3;
+      this.decode.Text = "Декодировать";
+      this.decode.UseVisualStyleBackColor = true;
+      this.decode.Click += new System.EventHandler(this.decode_Click);
+      // 
+      // encode
+      // 
+      this.encode.Enabled = false;
+      this.encode.Location = new System.Drawing.Point(111, 19);
+      this.encode.Name = "encode";
+      this.encode.Size = new System.Drawing.Size(88, 23);
+      this.encode.TabIndex = 2;
+      this.encode.Text = "Закодировать";
+      this.encode.UseVisualStyleBackColor = true;
+      this.encode.Click += new System.EventHandler(this.encode_Click);
+      // 
+      // encodeTextBox
+      // 
+      this.encodeTextBox.Enabled = false;
+      this.encodeTextBox.Location = new System.Drawing.Point(6, 48);
+      this.encodeTextBox.Multiline = true;
+      this.encodeTextBox.Name = "encodeTextBox";
+      this.encodeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+      this.encodeTextBox.Size = new System.Drawing.Size(396, 228);
+      this.encodeTextBox.TabIndex = 1;
+      // 
+      // decodeTextBox
+      // 
+      this.decodeTextBox.Enabled = false;
+      this.decodeTextBox.Location = new System.Drawing.Point(6, 311);
+      this.decodeTextBox.Multiline = true;
+      this.decodeTextBox.Name = "decodeTextBox";
+      this.decodeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+      this.decodeTextBox.Size = new System.Drawing.Size(396, 268);
+      this.decodeTextBox.TabIndex = 0;
+      // 
       // groupBox3
       // 
-      this.groupBox3.Controls.Add(this.analiz);
       this.groupBox3.Controls.Add(this.readFile);
       this.groupBox3.Controls.Add(this.openFile);
       this.groupBox3.Controls.Add(this.beginText);
       this.groupBox3.Location = new System.Drawing.Point(12, 19);
       this.groupBox3.Name = "groupBox3";
-      this.groupBox3.Size = new System.Drawing.Size(360, 585);
+      this.groupBox3.Size = new System.Drawing.Size(258, 585);
       this.groupBox3.TabIndex = 2;
       this.groupBox3.TabStop = false;
       this.groupBox3.Text = "Входные данные";
-      // 
-      // analiz
-      // 
-      this.analiz.Location = new System.Drawing.Point(251, 19);
-      this.analiz.Name = "analiz";
-      this.analiz.Size = new System.Drawing.Size(103, 23);
-      this.analiz.TabIndex = 5;
-      this.analiz.Text = "Анализ";
-      this.analiz.UseVisualStyleBackColor = true;
-      this.analiz.Click += new System.EventHandler(this.analiz_Click);
       // 
       // readFile
       // 
@@ -106,7 +189,7 @@
       this.beginText.Multiline = true;
       this.beginText.Name = "beginText";
       this.beginText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.beginText.Size = new System.Drawing.Size(348, 531);
+      this.beginText.Size = new System.Drawing.Size(239, 531);
       this.beginText.TabIndex = 0;
       // 
       // groupBox2
@@ -133,71 +216,31 @@
       // 
       this.openFileDialog1.FileName = "openFileDialog1";
       // 
-      // groupBox4
+      // aboutEncoding
       // 
-      this.groupBox4.Controls.Add(this.buldTree);
-      this.groupBox4.Controls.Add(this.decode);
-      this.groupBox4.Controls.Add(this.encode);
-      this.groupBox4.Controls.Add(this.encodeTextBox);
-      this.groupBox4.Controls.Add(this.decodeTextBox);
-      this.groupBox4.Location = new System.Drawing.Point(527, 19);
-      this.groupBox4.Name = "groupBox4";
-      this.groupBox4.Size = new System.Drawing.Size(451, 585);
-      this.groupBox4.TabIndex = 3;
-      this.groupBox4.TabStop = false;
-      this.groupBox4.Text = "Выходные данные";
+      this.aboutEncoding.Location = new System.Drawing.Point(6, 102);
+      this.aboutEncoding.Name = "aboutEncoding";
+      this.aboutEncoding.Size = new System.Drawing.Size(266, 471);
+      this.aboutEncoding.TabIndex = 1;
+      this.aboutEncoding.Text = "";
       // 
-      // decodeTextBox
+      // label6
       // 
-      this.decodeTextBox.Enabled = false;
-      this.decodeTextBox.Location = new System.Drawing.Point(6, 311);
-      this.decodeTextBox.Multiline = true;
-      this.decodeTextBox.Name = "decodeTextBox";
-      this.decodeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.decodeTextBox.Size = new System.Drawing.Size(439, 268);
-      this.decodeTextBox.TabIndex = 0;
+      this.label6.AutoSize = true;
+      this.label6.Location = new System.Drawing.Point(6, 54);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(141, 13);
+      this.label6.TabIndex = 2;
+      this.label6.Text = "Размер закодированного:";
       // 
-      // encodeTextBox
+      // label7
       // 
-      this.encodeTextBox.Enabled = false;
-      this.encodeTextBox.Location = new System.Drawing.Point(6, 48);
-      this.encodeTextBox.Multiline = true;
-      this.encodeTextBox.Name = "encodeTextBox";
-      this.encodeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.encodeTextBox.Size = new System.Drawing.Size(439, 218);
-      this.encodeTextBox.TabIndex = 1;
-      // 
-      // encode
-      // 
-      this.encode.Enabled = false;
-      this.encode.Location = new System.Drawing.Point(111, 19);
-      this.encode.Name = "encode";
-      this.encode.Size = new System.Drawing.Size(88, 23);
-      this.encode.TabIndex = 2;
-      this.encode.Text = "Закодировать";
-      this.encode.UseVisualStyleBackColor = true;
-      this.encode.Click += new System.EventHandler(this.encode_Click);
-      // 
-      // decode
-      // 
-      this.decode.Enabled = false;
-      this.decode.Location = new System.Drawing.Point(6, 282);
-      this.decode.Name = "decode";
-      this.decode.Size = new System.Drawing.Size(88, 23);
-      this.decode.TabIndex = 3;
-      this.decode.Text = "Декодировать";
-      this.decode.UseVisualStyleBackColor = true;
-      this.decode.Click += new System.EventHandler(this.decode_Click);
-      // 
-      // buldTree
-      // 
-      this.buldTree.Location = new System.Drawing.Point(6, 19);
-      this.buldTree.Name = "buldTree";
-      this.buldTree.Size = new System.Drawing.Size(99, 23);
-      this.buldTree.TabIndex = 4;
-      this.buldTree.Text = "Строить дерево";
-      this.buldTree.UseVisualStyleBackColor = true;
-      this.buldTree.Click += new System.EventHandler(this.buldTree_Click);
+      this.label7.AutoSize = true;
+      this.label7.Location = new System.Drawing.Point(6, 86);
+      this.label7.Name = "label7";
+      this.label7.Size = new System.Drawing.Size(51, 13);
+      this.label7.TabIndex = 3;
+      this.label7.Text = "Сжатие: ";
       // 
       // Form1
       // 
@@ -210,12 +253,14 @@
       this.Name = "Form1";
       this.Text = "Form1";
       this.groupBox1.ResumeLayout(false);
+      this.groupBox5.ResumeLayout(false);
+      this.groupBox5.PerformLayout();
+      this.groupBox4.ResumeLayout(false);
+      this.groupBox4.PerformLayout();
       this.groupBox3.ResumeLayout(false);
       this.groupBox3.PerformLayout();
       this.groupBox2.ResumeLayout(false);
       this.groupBox2.PerformLayout();
-      this.groupBox4.ResumeLayout(false);
-      this.groupBox4.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -231,13 +276,17 @@
     private System.Windows.Forms.OpenFileDialog openFileDialog1;
     private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     private System.Windows.Forms.Button readFile;
-    private System.Windows.Forms.Button analiz;
     private System.Windows.Forms.GroupBox groupBox4;
     private System.Windows.Forms.Button decode;
     private System.Windows.Forms.Button encode;
     private System.Windows.Forms.TextBox encodeTextBox;
     private System.Windows.Forms.TextBox decodeTextBox;
     private System.Windows.Forms.Button buldTree;
+    private System.Windows.Forms.GroupBox groupBox5;
+    private System.Windows.Forms.Label label5;
+    private System.Windows.Forms.RichTextBox aboutEncoding;
+    private System.Windows.Forms.Label label7;
+    private System.Windows.Forms.Label label6;
   }
 }
 
