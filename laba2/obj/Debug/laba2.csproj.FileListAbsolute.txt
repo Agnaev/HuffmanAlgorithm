@@ -1,8 +1,0 @@
-C:\Users\Ortum\Desktop\7семестр\Проскурин\ProtectingInformation\laba2\laba2\bin\Debug\laba2.exe
-C:\Users\Ortum\Desktop\7семестр\Проскурин\ProtectingInformation\laba2\laba2\bin\Debug\laba2.pdb
-C:\Users\Ortum\Desktop\7семестр\Проскурин\ProtectingInformation\laba2\laba2\obj\Debug\laba2.csprojResolveAssemblyReference.cache
-C:\Users\Ortum\Desktop\7семестр\Проскурин\ProtectingInformation\laba2\laba2\obj\Debug\laba2.Form1.resources
-C:\Users\Ortum\Desktop\7семестр\Проскурин\ProtectingInformation\laba2\laba2\obj\Debug\laba2.Properties.Resources.resources
-C:\Users\Ortum\Desktop\7семестр\Проскурин\ProtectingInformation\laba2\laba2\obj\Debug\laba2.csproj.GenerateResource.Cache
-C:\Users\Ortum\Desktop\7семестр\Проскурин\ProtectingInformation\laba2\laba2\obj\Debug\laba2.exe
-C:\Users\Ortum\Desktop\7семестр\Проскурин\ProtectingInformation\laba2\laba2\obj\Debug\laba2.pdb
