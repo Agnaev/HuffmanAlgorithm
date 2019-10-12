@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using System.Windows;
 
 namespace laba2
 {
@@ -24,7 +19,6 @@ namespace laba2
         {
             InitializeComponent();
         }
-
 
         private void openFile_Click(object sender, System.EventArgs e)
         {
@@ -47,7 +41,6 @@ namespace laba2
             encodedText = result;
         }
 
-
         private void encode_Click(object sender, System.EventArgs e)
         {
             aboutEncoding.Text = encodeTextBox.Text = string.Empty;
@@ -56,18 +49,14 @@ namespace laba2
             htree.Build(encodedText);
             decode.Enabled = true;
             encoded = htree.Encode(encodedText);
+            
             foreach (bool bit in encoded)
             {
-                encodeTextBox.Text += bit ? 1 : 0;
+                encodeTextBox.Text += (bit ? 1 : 0).ToString();
             }
 
             FileInfo fi1 = new FileInfo(openFileDialog1.FileName);
             label5.Text = $"Исходный файл { fi1.Length } байт";
-
-            //foreach (var item in htree.Frequencies)
-            //{
-            //    aboutEncoding.Text += $"Символ: { item.Key } Количество: { item.Value } Код { htree.codec1[item.Key] }\n";
-            //}
 
             foreach (KeyValuePair<char, int> item in htree.Frequencies)
             {
