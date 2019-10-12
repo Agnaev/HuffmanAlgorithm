@@ -12,8 +12,13 @@ namespace laba2
         public Node Root { get; set; }
         public Dictionary<char, int> Frequencies = new Dictionary<char, int>();
 
+        private bool IsBuild { get; set; } = false;
+
         public void Build(string source)
         {
+            if (IsBuild)
+                return;
+
             for (int i = 0; i < source.Length; i++)
             {
                 if (!Frequencies.ContainsKey(source[i]))
@@ -67,6 +72,7 @@ namespace laba2
                 }
                 Root = nodes.FirstOrDefault();
             }
+            IsBuild = true;
         }
 
 
